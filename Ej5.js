@@ -8,3 +8,21 @@ Considera que solo los autos de marcas "Chevrolet", "Ford" y "Fiat" son de orige
 */
 
 const prompt = require('prompt-sync')();
+
+console.log(" --- VERIFICANDO EL ORIGEN DE TU AUTO ---");
+
+let marca = prompt("Ingresá la marca de tu auto: ").toLowerCase();
+
+let marcaChevrolet = "chevrolet";
+let marcaFord = "ford";
+let marcaFiat = "fiat";
+
+let nacional = (marca) => {
+    if (marca === marcaChevrolet || marca === marcaFord || marca === marcaFiat) {
+        return "NACIONAL";
+    } else {
+        return "IMPORTADO";
+    }
+};
+
+console.log("Tu auto es de origen " + nacional(marca));
