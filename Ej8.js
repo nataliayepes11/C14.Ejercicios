@@ -7,3 +7,23 @@ La función deberá imprimir por pantalla los números del 1 al 100, pero tenien
 */
 
 const prompt = require('prompt-sync')();
+
+let param1 = Number(prompt("Ingrese un número: "));
+let param2 = Number(prompt("Ingrese otro número: "));
+// Sé que el ejercicio no pide que ingrese el usuario números, pero lo hago así para que sea más didáctico.
+// El enunciado sería desde la línea 15 a la 29.
+const backEnd =(param1, param2) => {
+    for (let i = 1; i <= 100; i++) {
+        if (i % param1 === 0 && i % param2 === 0) {
+            console.log("Back End");
+        } else if (i % param1 === 0) {
+            console.log("Back");
+        } else if (i % param2 === 0) {
+            console.log("End");
+        } else {
+            console.log(i);
+        }
+    }
+};
+// Si no ingresara el usuario los números, tendrían que ser números concretos ambos parámetros)
+backEnd(param1, param2);
