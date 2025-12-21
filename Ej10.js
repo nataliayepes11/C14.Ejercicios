@@ -8,4 +8,30 @@ agrega cada una al array manualmente (sin usar métodos como push).
 4.	Muestra por consola cuántas de las flores favoritas se mencionaron (esto debe hacerse manualmente).
 */
 
-const prompt = require('prompt-sync')();
+const prompt = require(`prompt-sync`)();
+
+let floresFavoritas = [];
+
+let flor1 = prompt("Ingresá tu primera flor favorita: ");
+let flor2 = prompt("Ingresá tu segunda flor favorita: ");
+let flor3 = prompt("Ingresá tu tercera flor favorita: ");
+
+floresFavoritas[0] = flor1;
+floresFavoritas[1] = flor2;
+floresFavoritas[2] = flor3;
+
+let florEspecifica = prompt("Ingresá una flor para verificar si está entre tus favoritas: ");
+let contador = 0;
+
+for (let i = 0; i < floresFavoritas.length; i++) {
+    if (floresFavoritas[i] === florEspecifica) {
+        contador++;
+    }
+}
+
+if (contador > 0) {
+    console.log("La flor " + florEspecifica + " aparece " + contador + " vez/veces entre tus favoritas");
+} else {
+    console.log("Esa flor no está entre tus favoritas");
+}
+
