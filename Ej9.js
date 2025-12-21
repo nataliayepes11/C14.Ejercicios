@@ -12,4 +12,24 @@ imprimir por consola la posición (índice + 1) en la que aparece (considerando 
 ✔	Si el modelo no está en el array, debe imprimir un mensaje indicando que el modelo no está presente.
 */ 
 
-const prompt = require('prompt-sync')();
+let modelosAutos = ["Corolla", "Fiesta", "Voyage", "Gol", "Cruze", "Voyage", "Pointer", "Up"];
+
+const ultimaAparicionModeloAuto = (modelo) => {
+    let posicion = -1;
+
+    for (let i = 0; i < modelosAutos.length; i++) {
+        if (modelosAutos[i] === modelo) {   
+            posicion = i;                   
+        }
+    }
+
+    if (posicion !== -1) {
+        console.log(
+            "La última aparición de " + modelo + " es en la posición " + (posicion + 1)
+        );
+    } else {
+        console.log("El modelo no está presente");
+    }
+};
+
+ultimaAparicionModeloAuto("Voyage");
